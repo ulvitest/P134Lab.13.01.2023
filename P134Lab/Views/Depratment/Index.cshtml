@@ -1,0 +1,36 @@
+﻿@model List<P134Lab.Models.Department>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>
+                    @foreach (var item1 in item.Employees)
+                    {
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>@item1.Id</td>
+                                    <td>@item1.Name</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                         
+                        
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
